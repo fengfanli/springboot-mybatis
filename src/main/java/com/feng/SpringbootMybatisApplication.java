@@ -6,9 +6,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 
 
-
-@SpringBootApplication(exclude = DataSourceAutoConfiguration.class)
-//@SpringBootApplication
+@MapperScan(value = {"com.feng.dao"})
+//@SpringBootApplication(exclude = DataSourceAutoConfiguration.class)
+@SpringBootApplication
 public class SpringbootMybatisApplication {
 
     public static void main(String[] args) {
