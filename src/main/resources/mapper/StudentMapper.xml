@@ -90,4 +90,9 @@
       nation = #{nation,jdbcType=VARCHAR}
     where stu_id = #{stuId,jdbcType=INTEGER}
   </update>
+
+  <select id="getAllStudent" resultType="com.feng.bean.Student">
+    SELECT stu_id AS stuId, name, gender, age, nation
+    FROM STUDENT
+  </select>
 </mapper>

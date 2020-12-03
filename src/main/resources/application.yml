@@ -13,6 +13,31 @@ spring:
 
 mybatis:
   # 配置映射类所在的包名
-  type-aliases-package: com.feng.bean
+  type-aliases-package: com.feng.bean, com.feng.vo.req, com.feng.vo.resp
   # 配置 mapper xml 文件所在的路径， 如果不配置 会报错：org.apache.ibatis.binding.BindingException: Invalid bound statement (not found)
+  # 也就是 java 找不到 mapper 的 xml 文件中的语句
   mapper-locations: classpath:mapper/*.xml
+  # mybatis 打印 SQL 语句
+#  configuration:
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+# 分页配置
+pagehelper:
+  # 分页插件会自动检测当前的数据库链接，自动选择合适的分页方式。你也可以配置helperDialect属性来指定分页插件使用哪种方言
+  helper-dialect: mysql
+  # 分页合理化参数，默认值为false。当该参数设置为 true 时，pageNum<=0 时会查询第一页， pageNum>pages（超
+  # 过总数时），会查询最后一页。默认false 时，直接根据参数进行查询
+  reasonable: true
+
+# log日志
+logging:
+  file:
+    path: myLogs
+    name:
+  level:
+    com.feng.dao: debug
+
+
+#swagger
+swagger2:
+  enable: true

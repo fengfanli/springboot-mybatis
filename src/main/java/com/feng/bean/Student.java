@@ -1,7 +1,14 @@
 package com.feng.bean;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.io.Serializable;
 
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Student implements Serializable {
     private Integer stuId;
 
@@ -14,46 +21,6 @@ public class Student implements Serializable {
     private String nation;
 
     private static final long serialVersionUID = 1L;
-
-    public Integer getStuId() {
-        return stuId;
-    }
-
-    public void setStuId(Integer stuId) {
-        this.stuId = stuId;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name == null ? null : name.trim();
-    }
-
-    public String getGender() {
-        return gender;
-    }
-
-    public void setGender(String gender) {
-        this.gender = gender == null ? null : gender.trim();
-    }
-
-    public Integer getAge() {
-        return age;
-    }
-
-    public void setAge(Integer age) {
-        this.age = age;
-    }
-
-    public String getNation() {
-        return nation;
-    }
-
-    public void setNation(String nation) {
-        this.nation = nation == null ? null : nation.trim();
-    }
 
     @Override
     public String toString() {
